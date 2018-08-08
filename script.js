@@ -21,6 +21,14 @@ var createCards = function(obj){
     nameContainer.className = "name-container";
     infoContainer.appendChild(nameContainer);
 
+    var title = document.createElement("span");
+    title.className = "title";
+    nameContainer.appendChild(title);
+
+    var name = document.createElement("span");
+    name.className = "name";
+    nameContainer.appendChild(name);
+
     var ageContainer = document.createElement("div");
     ageContainer.className = "age-container";
     infoContainer.appendChild(ageContainer);
@@ -29,7 +37,8 @@ var createCards = function(obj){
     emailContainer.className = "email";
     infoContainer.appendChild(emailContainer);
 
-    nameContainer.innerHTML = results[i].name.title + ". " + results[i].name.first + " " + results[i].name.last;
+    title.innerHTML = results[i].name.title + ". ";
+    name.innerHTML = results[i].name.first + " " + results[i].name.last;
     ageContainer.innerHTML = results[i].dob.age;
     emailContainer.innerHTML = results[i].email;
   }
@@ -61,6 +70,23 @@ var showAll = function () {
     card.classList.remove("hidden");
   }
 };
+
+function searchByText() {
+  var input = document.getElementById("name-filter");
+  var userText = input.value.toLowerCase();
+  var container = document.getElementById("cards-container");
+  var allCards = document.querySelectorAll(".card");
+  for (var i = 0; i < allCards.length; i++) {
+    var card = allCards[i];
+    var nameContainer = card.getElementsByClassName("name")[0];
+    var name = nameContainer.innerHTML;
+    if (name.toLowerCase().indexOf(userText) !== 0) {
+      card.classList.add("hidden");
+    } else {
+      card.classList.remove("hidden");
+    }
+  }
+}
 
 $( document ).ready(function() {
   var jsonData;
