@@ -15,9 +15,16 @@ body{
 }
 
 .card{
+  display: flex;
+  justify-content: space-between;
   flex: 0 0 200px;
   padding: 10px;
   background-color: #fff;
   border-radius: 10px;
   margin: 10px;
+}
+
+
+.card img{
+  border-radius: 8px;
 }

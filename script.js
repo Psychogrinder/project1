@@ -3,9 +3,18 @@ var createCards = function(obj){
   var results = obj.results;
   for (var i = 0; i < results.length; i++) {
     var card = document.createElement("div");
-    card.innerHTML = results[i].name.first + " " + results[i].name.last;
-    card.className = "card";
     container.appendChild(card);
+    card.className = "card";
+    var avaContainer = document.createElement("div");
+    card.appendChild(avaContainer);
+    var ava = document.createElement("img");
+    ava.src = results[i].picture.thumbnail;
+    avaContainer.appendChild(ava);
+    var infoContainer = document.createElement("div");
+    infoContainer.className = "info-container";
+    card.appendChild(nameContainer);
+    nameContainer.innerHTML = results[i].name.title + ". " + results[i].name.first + " " + results[i].name.last;
+
   }
 };
 
