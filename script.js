@@ -5,16 +5,28 @@ var createCards = function(obj){
     var card = document.createElement("div");
     container.appendChild(card);
     card.className = "card";
+
     var avaContainer = document.createElement("div");
     card.appendChild(avaContainer);
+
     var ava = document.createElement("img");
     ava.src = results[i].picture.thumbnail;
     avaContainer.appendChild(ava);
+
     var infoContainer = document.createElement("div");
     infoContainer.className = "info-container";
-    card.appendChild(nameContainer);
-    nameContainer.innerHTML = results[i].name.title + ". " + results[i].name.first + " " + results[i].name.last;
+    card.appendChild(infoContainer);
 
+    var nameContainer = document.createElement("div");
+    nameContainer.className = "name-container";
+    infoContainer.appendChild(nameContainer);
+
+    var emailContainer = document.createElement("div");
+    emailContainer.className = "name";
+    infoContainer.appendChild(emailContainer);
+
+    nameContainer.innerHTML = results[i].name.title + ". " + results[i].name.first + " " + results[i].name.last;
+    emailContainer.innerHTML = results[i].email;
   }
 };
 
