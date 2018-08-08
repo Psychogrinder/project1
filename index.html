@@ -6,8 +6,16 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <div class="filter-container">
+      <div class="age-filter">
+        <button type="button" class="btn younger" onclick="ageFilter(false)">younger then 40</button>
+        <button type="button" class="btn older" onclick="ageFilter(true)">40 and older</button>
+        <button type="button" class="btn all" onclick="showAll()">Show all</button>
+      </div>
+      <div class="search-filter"></div>
+    </div>
     <div class="container">
-    
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>

@@ -14,6 +14,12 @@ body{
   background-color: gray;
 }
 
+.filter-container{
+  display: flex;
+  justify-content: flex-start;
+  height: 100px;
+}
+
 .card{
   display: flex;
   justify-content: space-between;
@@ -33,4 +39,17 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.age-container{
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.name-container{
+  color: #535353;
+}
+
+.hidden{
+  display: none;
 }
